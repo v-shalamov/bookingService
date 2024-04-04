@@ -2,6 +2,7 @@ package projektAspiration.bookingService.service;
 
 import projektAspiration.bookingService.model.User;
 
+import javax.swing.*;
 import java.util.List;
 
 public interface UserServiceInterface {
@@ -18,13 +19,31 @@ public interface UserServiceInterface {
 
     User getUserById(int id);
 
-    void update(User user);
+    void updateFirstNameUser(User user);
 
-    void deleteById(int id);
+    void updateLastNameUser(User user);
 
-    void deleteByName(String name);
+    void updateEmailUser(User user);
 
-    void restoreById(int id);
+    void updateUserPassword(User user);
+
+    void updateDateOfBirthUser(User user);
+
+    void updateIsActive(User user);
+
+    String TransitionToNotActivityStateById(int id);
+
+    String TransitionToANewActivityStateByFirstName(String name);
+
+    String restoringTheActiveUserStateById(int id);
+
+    String restoringTheActiveUserStateByFirstName(String name);
+
+    // String generalMethodForChangingUserActivityState(String x);
 
     int getActiveUsersCount();
+
+    int getNotActiveUsersCount();
+
+    int getAllUsersCount();
 }
