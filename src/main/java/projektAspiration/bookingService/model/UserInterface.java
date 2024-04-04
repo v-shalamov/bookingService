@@ -28,6 +28,9 @@ public interface UserInterface {
 
     void setDateOfBirthUser(LocalDate DateOfBirthUser);
 
+    boolean getIsActive();
+
+    void setIsActive(boolean isActive);
 
     int getIdUser();
 
