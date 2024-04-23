@@ -20,6 +20,8 @@ public class UserService implements UserServiceInterface {
     @Override
     public User save(User user) {
         try {
+            user.setRole("user");
+            user.setIsActive(true);
             repository.save(user);
             return user;
         } catch (Exception e) {
@@ -38,7 +40,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public List<User> getAllUser() {
+    public List<User> getAllUsers() {
 
         List<User> users = new ArrayList<>();
 
@@ -203,6 +205,11 @@ public class UserService implements UserServiceInterface {
         int allUsersCount = users.size();
 
         return allUsersCount;
+    }
+
+    @Override
+    public void methodChangingUserRole(String newRole, User user) {
+        user.setRole(newRole);
     }
 
     public static List<User> getAllActiveUserStaticMethod() {

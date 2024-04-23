@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
+import projektAspiration.bookingService.MultiplePattern;
 
 import java.time.LocalDate;
 
@@ -45,7 +46,20 @@ public class User implements UserInterface {
     @Column(name = "date_of_birth_user")
     private LocalDate dateOfBirthUser;
 
+    @NotBlank
+    @Column(name = "role")
+    @MultiplePattern(patterns = {"admin", "moderator", "guest", "user"})
+    private String role;
+
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean active;
+
+    public boolean getIsActive() {
+        return active;
+    }
+
+    public void setIsActive(boolean active) {
+        this.active = active;
+    }
 }
 
