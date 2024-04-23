@@ -28,12 +28,12 @@ public interface UserInterface {
 
     void setDateOfBirthUser(LocalDate DateOfBirthUser);
 
-    boolean getIsActive();
-
-    void setIsActive(boolean isActive);
 
     int getIdUser();
 
-    void setIdUser(int idUser);
+
+    boolean getIsActive();
+
+    void setIsActive(boolean isActive);
 }
 

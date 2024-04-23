@@ -13,7 +13,7 @@ public interface UserServiceInterface {
 
     List<User> getAllNotActiveUser();
 
-    List<User> getAllUser();
+    List<User> getAllUsers();
 
     User getActiveUserById(int id);
 
@@ -46,4 +46,6 @@ public interface UserServiceInterface {
     int getNotActiveUsersCount();
 
     int getAllUsersCount();
+
+    void methodChangingUserRole(String newRole, User user);
 }
